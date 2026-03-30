@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/style.css">
+<h2>Edit Post</h2>
+<form action="/posts/edit/<%= post._id %>" method="POST" enctype="multipart/form-data">
+    <input type="text" name="title" value="<%= post.title %>" required>
+    <textarea name="content" required><%= post.content %></textarea>
+    <input type="file" name="image" accept="image/*">
+    <% if(post.image){ %>
+        <img src="/uploads/<%= post.image %>" width="150"/>
+    <% } %>
+    <button type="submit">Update Post</button>
+</form>
+<a href="/posts/dashboard">Back to Dashboard</a>

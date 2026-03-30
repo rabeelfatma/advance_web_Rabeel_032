@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/style.css">
+<h2>Dashboard</h2>
+<a href="/posts/create">Create New Post</a>
+<a href="/logout">Logout</a>
+
+<% posts.forEach(post => { %>
+    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+        <h3><%= post.title %></h3>
+        <p>By: <%= post.user.name %></p>
+        <p><%= post.content %></p>
+        <% if(post.image){ %>
+            <img src="/uploads/<%= post.image %>" width="200"/>
+        <% } %>
+        <a href="/posts/edit/<%= post._id %>">Edit</a>
+        <form action="/posts/delete/<%= post._id %>" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+<% }) %>

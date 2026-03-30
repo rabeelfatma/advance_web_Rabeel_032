@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/style.css">
+<h2>Login</h2>
+<form action="/login" method="POST">
+    <input type="email" name="email" placeholder="Email" value="<%= oldInput.email %>">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Login</button>
+</form>
+
+<% if(errors.length > 0){ %>
+    <ul style="color:red;">
+        <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<a href="/register">Register</a>
