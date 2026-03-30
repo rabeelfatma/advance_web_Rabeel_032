@@ -1,3 +1,7 @@
+Video Link:
+
+https://drive.google.com/file/d/1iRkJhETgewmlwkhk2i8HHe4kfEQMu1MX/view?usp=drive_link
+
 Expense Manager - Complete Project Documentation
 1.	Project Introduction
 This Expense Manager is a full-stack web application developed using React for frontend, Node.js & Express for backend, and MongoDB as database. It allows users to manage their income and expenses, track financial data, and visualize analytics using charts.
