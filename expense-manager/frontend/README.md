@@ -3,96 +3,101 @@ Video Link:
 https://drive.google.com/file/d/1iRkJhETgewmlwkhk2i8HHe4kfEQMu1MX/view?usp=drive_link
 
 Expense Manager - Complete Project Documentation
-1.	Project Introduction
+
+1.           Project Introduction
 This Expense Manager is a full-stack web application developed using React for frontend, Node.js & Express for backend, and MongoDB as database. It allows users to manage their income and expenses, track financial data, and visualize analytics using charts.
+Additionally, the project includes input validation and authentication mechanisms, ensuring that user data such as email and password is properly verified before account creation and login.
+It also features a dedicated Analytics Page where users can visually analyze their financial data using multiple chart types.
 
-2. Project Features
-- User Signup & Login Authentication
-- Secure Password Handling
-- Add / Edit / Delete Transactions
-- Filter Transactions (Daily, Monthly, Yearly)
-- Search by Title
-- Category Filtering
-- Date Range Filtering
-- Dashboard Summary (Income, Expense, Balance)
-- Budget Limit Alert System
-- Dark Mode Toggle
-- Analytics Page (Charts)
-- Highest Spending Category Detection
-- Savings & Savings Rate Calculation
+2.           Project Features
+•	User Signup & Login Authentication
+•	Secure Password Handling
+•	Email & Password Validation (Authentication Validation)
+•	Add / Edit / Delete Transactions
+•	Filter Transactions (Daily, Monthly, Yearly)
+•	Search by Title
+•	Category Filtering
+•	Date Range Filtering
+•	Dashboard Summary (Income, Expense, Balance)
+•	Budget Limit Alert System
+•	Dark Mode Toggle
+•	Analytics Page (Bar, Pie, Line Charts)
+•	Daily, Monthly, Yearly Financial Analysis Visualization
+•	Highest Spending Category Detection
+•	Savings & Savings Rate Calculation
 
-3. Project Flow
-1. User opens Landing Page
-2. User goes to Signup/Login
-3. After login → Dashboard opens
-4. User adds transactions
-5. Data stored in MongoDB via backend API
-6. Dashboard shows summary + history
-7. User can filter/search data
-8. Analytics page shows charts & insights
+3.           Project Flow
+1.	User opens Landing Page
+2.	User goes to Signup/Login
+3.	After login → Dashboard opens
+4.	User adds transactions
+5.	Data stored in MongoDB via backend API
+6.	Dashboard shows summary + history
+7.	User can filter/search data
+8.	Analytics page shows charts & insights (Bar, Pie, Line)
+During signup/login, validation checks are applied on email format and password strength before allowing access.
+ Analytics page displays daily, monthly, and yearly data in graphical form for better understanding.
 
-4. Folder Structure
+4.           Folder Structure
 Backend:
-- models (User, Transaction)
-- controllers (authController, transactionController)
-- routes (authRoutes, transactionRoutes)
-- middleware (authMiddleware)
-- server.js
-
+•	models (User, Transaction)
+•	controllers (authController, transactionController)
+•	routes (authRoutes, transactionRoutes)
+•	middleware (authMiddleware)
+•	server.js
 Frontend:
-- src/pages (Login, Signup, Dashboard, Analysis, Landing)
-- src/components
-- api.js (API calls)
-- App.jsx (routing)
+•	src/pages (Login, Signup, Dashboard, Analysis, Landing)
+•	src/components
+•	api.js (API calls)
+•	App.jsx (routing)
 
-5. Backend Explanation
-Models: Define database schema (User, Transaction)
+5.           Backend Explanation
+•	Models: Define database schema (User, Transaction)
+•	Controllers: Handle logic like signup, login, CRUD operations
+•	Routes: Define API endpoints
+•	Middleware: Used for authentication (JWT) and request validation
+•	Server.js: Main backend entry point
+ Validation is implemented in backend to check:
+•	Valid email format
+•	Strong password requirements (length, characters, etc.)
+•	Duplicate email prevention
+ Backend also provides filtered data (daily, monthly, yearly) for analytics visualization.
 
-Controllers: Handle logic like signup, login, CRUD operations
+6.           Frontend Explanation
+•	Landing Page: Navigation (Login/Signup)
+•	Login Page: User authentication with validation
+•	Signup Page: Create account with email & password validation
+•	Dashboard: Manage transactions, filters, dark mode
+•	Analysis Page: Displays Bar Chart, Pie Chart, and Line Chart
+Analytics Page Features:
+•	Bar Chart → Shows income vs expense comparison
+•	Pie Chart → Shows category-wise expense distribution
+•	Line Chart → Shows trends over time
+•	Supports Daily, Monthly, and Yearly data visualization
+ Frontend also performs client-side validation before sending data to backend.
 
-Routes: Define API endpoints
-
-Middleware: Used for authentication (JWT)
-
-Server.js: Main backend entry point
-
-6. Frontend Explanation
-Landing Page: Navigation (Login/Signup)
-
-Login Page: User authentication
-
-Signup Page: Create account with validation
-
-Dashboard: Manage transactions, filters, dark mode
-
-Analysis Page: Charts (Line, Bar, Pie)
-
-
-7. REST APIs Used
+7.           REST APIs Used
 Auth APIs:
-POST /api/auth/signup
-POST /api/auth/login
-
+•	POST /api/auth/signup
+•	POST /api/auth/login
 Transaction APIs:
-GET /api/transactions
-POST /api/transactions
-PUT /api/transactions/:id
-DELETE /api/transactions/:id
+•	GET /api/transactions
+•	POST /api/transactions
+•	PUT /api/transactions/:id
+•	DELETE /api/transactions/:id
 
-
-8. Installation Commands (VS Code)
+8.          Installation Commands (VS Code)
 Backend:
 npm init -y
 npm install express mongoose cors dotenv
-
 Frontend:
 npm create vite@latest
 npm install
 npm install recharts react-router-dom
 
-
-9. Conclusion
-This project demonstrates full-stack development with authentication, CRUD operations, filtering, and data visualization. It helps users manage finances efficiently.
+9.          Conclusion
+This project demonstrates full-stack development with authentication, validation, CRUD operations, filtering, and data visualization. It helps users manage finances efficiently while ensuring secure and validated user input through email and password authentication mechanisms.
+Additionally, the Analytics Page enhances user experience by presenting financial data through Bar, Pie, and Line charts, allowing users to analyze their daily, monthly, and yearly financial patterns effectively.
 
 Screenshots:
 
@@ -113,6 +118,12 @@ Screenshots:
 <img width="958" height="255" alt="16" src="https://github.com/user-attachments/assets/adea3451-629f-4d97-8af1-ceac778a2bbd" />
 <img width="940" height="353" alt="17" src="https://github.com/user-attachments/assets/f838e60c-3428-495d-aade-b5f566395d7a" />
 <img width="941" height="343" alt="18" src="https://github.com/user-attachments/assets/76e5b762-15f4-4ffe-b1dc-2d7d3f1b7fa6" />
+<img width="776" height="163" alt="image" src="https://github.com/user-attachments/assets/c0b91293-b286-4b14-a1e6-e3fb3f0ac6a6" />
+<img width="974" height="595" alt="image" src="https://github.com/user-attachments/assets/d4d9386a-22e1-430c-83a2-e33b03f8e306" />
+<img width="975" height="614" alt="image" src="https://github.com/user-attachments/assets/d9f299e4-2223-42ae-a1e1-892197bb260c" />
+
+
+
 
 
 
