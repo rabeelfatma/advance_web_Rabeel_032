@@ -85,6 +85,96 @@ Transaction APIs:
 •	POST /api/transactions
 •	PUT /api/transactions/:id
 •	DELETE /api/transactions/:id
+ ROUTES:
+ const router = require("express").Router();
+const ctrl = require("../controllers/transactionController");
+
+router.post("/", ctrl.add);
+router.get("/", ctrl.getAll);
+router.delete("/:id", ctrl.delete);
+router.put("/:id", ctrl.update); 
+ FOR AUTH Routes:
+ const express = require("express");
+const router = express.Router();
+const User = require("../models/User");
+
+
+// ================= SIGNUP =================
+router.post("/signup", async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    const exists = await User.findOne({ email });
+
+    if (exists) {
+      return res.status(400).json({ msg: "User already exists" });
+    }
+
+    const user = new User({ name, email, password });
+    await user.save();
+
+    res.json({ msg: "Signup successful" });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+
+// ================= LOGIN =================
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    if (user.password !== password) {
+      return res.status(400).json({ msg: "Invalid password" });
+    }
+
+    res.json({ msg: "Login successful" });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+
+// ================= FORGOT PASSWORD =================
+router.post("/forgot-password", async (req, res) => {
+  try {
+    const { email, newPassword } = req.body;
+
+    if (!email || !newPassword) {
+      return res.status(400).json({ msg: "All fields required" });
+    }
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    user.password = newPassword;
+    await user.save();
+
+    res.json({ msg: "Password updated successfully" });
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+module.exports = router;
+
+module.exports = router;
 
 8.          Installation Commands (VS Code)
 Backend:
@@ -119,6 +209,12 @@ Screenshots:
 <img width="940" height="353" alt="17" src="https://github.com/user-attachments/assets/f838e60c-3428-495d-aade-b5f566395d7a" />
 <img width="941" height="343" alt="18" src="https://github.com/user-attachments/assets/76e5b762-15f4-4ffe-b1dc-2d7d3f1b7fa6" />
 <img width="776" height="163" alt="image" src="https://github.com/user-attachments/assets/c0b91293-b286-4b14-a1e6-e3fb3f0ac6a6" />
+<img width="737" height="449" alt="image" src="https://github.com/user-attachments/assets/bfcd8b13-f150-499f-ab61-0cea440f1b0b" />
+<img width="784" height="433" alt="image" src="https://github.com/user-attachments/assets/e0525939-dc9d-40fc-b0f5-728cacf295db" />
+<img width="712" height="443" alt="image" src="https://github.com/user-attachments/assets/26fcb3da-6bae-4d26-bf43-1083a0b6106b" />
+<img width="849" height="425" alt="image" src="https://github.com/user-attachments/assets/f1af6a56-67e4-4935-8760-1a3abe8bed6c" />
+<img width="929" height="470" alt="image" src="https://github.com/user-attachments/assets/a1077da1-3c38-43e5-abf0-44c6d036dff7" />
+
 <img width="974" height="595" alt="image" src="https://github.com/user-attachments/assets/d4d9386a-22e1-430c-83a2-e33b03f8e306" />
 <img width="975" height="614" alt="image" src="https://github.com/user-attachments/assets/d9f299e4-2223-42ae-a1e1-892197bb260c" />
 
