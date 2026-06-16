@@ -121,6 +121,8 @@ Screenshots:
 <img width="975" height="487" alt="image" src="https://github.com/user-attachments/assets/469ef4b4-5d5e-4355-8a59-cc5cee11e8ee" />
 <img width="975" height="298" alt="image" src="https://github.com/user-attachments/assets/a5e4a4a7-ea84-47d8-8819-3d6c3ebe2f73" />
 <img width="975" height="416" alt="image" src="https://github.com/user-attachments/assets/1eca60fc-2edc-429c-9676-898924879d26" />
+<img width="953" height="464" alt="ai response" src="https://github.com/user-attachments/assets/100d6e27-966b-4114-8bfa-189316690f8c" />
+
 <img width="975" height="477" alt="image" src="https://github.com/user-attachments/assets/cc686aaf-5461-4d1d-9d86-d583509dccf0" />
 <img width="470" height="185" alt="image" src="https://github.com/user-attachments/assets/dfcae933-91c3-4b02-b134-c6474ed65dfe" />
 <img width="974" height="595" alt="image" src="https://github.com/user-attachments/assets/4d750ecd-2c74-4c74-b0ad-4075844158a0" />
