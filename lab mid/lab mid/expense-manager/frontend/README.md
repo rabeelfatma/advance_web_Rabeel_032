@@ -1,7 +1,9 @@
 Video Link:
 
 https://drive.google.com/file/d/1hq1B16LGDoSFykg9nbvW6mToiWu6GBBn/view?usp=drive_link
+
 Documentation:
+
 Executive Summary
 Expense Manager is a full-stack MERN web application developed as part of the Advance Web Technologies (CSC336) course at COMSATS University Islamabad, Vehari Campus. The application enables users to track their daily income and expenses, set budgets, monitor financial health, and receive AI-powered personalized financial advice through Google Gemini AI integration.
 The system is built using React.js on the frontend and Node.js with Express.js on the backend, with MongoDB as the primary database managed through the Mongoose ODM. User authentication is handled securely using JWT (JSON Web Tokens) with bcrypt-hashed passwords. Password validation enforces a minimum security policy requiring at least 2 alphabets, 2 numbers, and 1 special character.
@@ -31,8 +33,7 @@ CUI	COMSATS University Islamabad
 TC	Test Case
 FR	Functional Requirement
 
- 
-Contents
+ Contents
  
 Executive Summary	1
 Abbreviations	2
@@ -87,39 +88,8 @@ COMSATS University Islamabad, Vehari Campus	Expense Manager — SP23-BSE-032
 4.5	Database (MongoDB)	34
 4.6	Testing Screenshots	37
 Bibliography	42
- 
 
 
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Page 4
  
 Chapter 1 Introduction
 1.1	Introduction
@@ -318,7 +288,10 @@ The Expense Manager follows a three-tier client-server architecture:
  
 
 1.10	Module Descriptions
+
 1.10.1	Module 1: Authentication Module
+
+
 The Authentication module handles user registration, login, and password reset. During signup, the system validates credentials and enforces a password policy requiring at least 2 alphabets, 2 numbers, and 1 special character. Passwords are hashed using bcryptjs before storage. On login, the system verifies the email and password, then issues a JWT token stored in the browser’s localStorage.
 Functional Requirements:
   FR-1: The system shall allow users to register with validated credentials and password strength enforcement.
@@ -326,6 +299,8 @@ Functional Requirements:
   FR-3: The system shall allow users to reset their password directly without OTP verification.
 
 1.10.2	Module 2:  Transaction Management Module
+
+
 The core module allowing authenticated users to add, edit, delete, and view financial transactions. Each transaction contains a title, amount, type (income or expense), category, and date. The dashboard provides real-time summary widgets, search, filter by category and date range, and quick time tabs (ALL/DAILY/MONTHLY/YEARLY).
 Functional Requirements:
   FR-1: The system shall allow authenticated users to create, read, update, and delete transactions.
@@ -333,6 +308,8 @@ Functional Requirements:
   FR-3: The system shall support filtering transactions by title search, category, date range, and time period.
 
 1.10.3	Module 3: Analytics and Insights Module
+
+
 Provides visual representation of financial data through three chart types: a Line Chart showing income vs expense trends over time, a Pie Chart showing budget distribution, and a Bar Chart comparing total income and expense. Charts support Daily, Monthly, and Yearly time filters.
 Functional Requirements:
   FR-1: The system shall render Line, Pie, and Bar charts from transaction data using Recharts.
@@ -343,6 +320,8 @@ Functional Requirements:
 expense category.
 
 1.10.4	Module 4: AI Financial Advisor Module
+
+
 Integrates Google Gemini AI (via OpenRouter) to provide users with personalized financial tips. When the user clicks “Get AI Advice”, the system sends the user’s financial summary to the AI endpoint. The response returns structured cards with icons, titles, and actionable tips.
 Functional Requirements:
   FR-1: The system shall send user financial data to the Gemini AI endpoint and return structured advice cards.
@@ -350,6 +329,8 @@ Functional Requirements:
   FR-3: The AI endpoint shall be protected by JWT token verification.
 
 1.10.5	Module 5: Widgets and Dashboard Module
+
+
 Provides five real-time financial widgets: Largest Expense, Financial Health Score (0–100), Budget Progress Bar (color-coded), Top 4 Expense Categories, and Smart Notifications (bell icon with badge count).
 Functional Requirements:
   FR-1: The system shall compute and display real-time financial health metrics from transaction data.
@@ -357,6 +338,8 @@ Functional Requirements:
   FR-3: The system shall allow users to set and update a custom budget limit.
 
 1.10.6	Module 6: Contact and Landing Page Module
+
+
 A full marketing page featuring a sticky navbar with smooth scroll, hero section with CTA buttons, stats bar, features grid with 6 cards, About section, and a contact form. The contact form posts to /api/contact/send with status feedback.
 Functional Requirements:
   FR-1: The system shall provide a marketing landing page accessible without authen-tication.
@@ -364,6 +347,8 @@ Functional Requirements:
   FR-3: The navbar shall support smooth scrolling to all page sections.
  
 Chapter 2 Implementation
+
+
 2.1	Development Environment
 The Expense Manager was developed using Visual Studio Code as the primary IDE. The backend runs on Node.js with Express.js and connects to a local MongoDB instance. The frontend is built with Vite + React.js and runs on port 5173.
 Environment Variables (.env):
